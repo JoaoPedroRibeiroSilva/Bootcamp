@@ -1,22 +1,27 @@
 #include <stdio.h>
-#include <stdlib.h>
-#include <locale.h> //biblioteca dos acentos
+#include <locale.h>
 
-void main (){
-    //permite usar acentos nas mensagens
-  setlocale(LC_ALL, "");
-  printf("ol· \n");
+int main(void) {
+    setlocale(LC_ALL, "");
+    printf("oi!! \n");
 
-  //lendo valores inteios
-  int a = 8;
-  printf("o valor de a È: %d \n", a);
-  scanf("%d", &a);
-  printf("\n o valor mudou para %d \n", a);
+    int a = 8;
+    printf("o valor inicial de a √©: %d\n", a);
+    printf("digite um novo valor inteiro para a: ");
+    if (scanf("%d", &a) != 1) {
+        printf("entrada inv√°lida\n");
+        return 1;
+    }
+    printf("o valor de a mudou para: %d\n", a);
 
-  //lendo valores quebrados
-  float b = 5.5;
-   printf("o valor de b È: %f \n", b);
-   scanf("%f", &b);
-   printf("\n o valor mudou para %f", b);
+    float b = 5.5f;
+    printf("o valor inicial de b √©: %.2f\n", b);
+    printf("digite um novo valor decimal para b: ");
+    if (scanf("%f", &b) != 1) {
+        printf("entrada inv√°lida\n");
+        return 1;
+    }
+    printf("o valor de b mudou para: %.2f\n", b);
 
+    return 0;
 }
